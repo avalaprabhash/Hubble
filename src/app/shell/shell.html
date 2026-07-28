@@ -1,0 +1,8 @@
+<app-header (navbarToggle)="toggleNavbar()"></app-header>
+
+<div class="content">
+  <app-navbar *ngIf="showNavbar"></app-navbar>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</div>

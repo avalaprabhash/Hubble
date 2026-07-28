@@ -1,0 +1,74 @@
+<div class="login-page">
+  <div class="login-hero" aria-hidden="true"></div>
+
+  <div class="login-panel">
+    <div class="login-box">
+
+      <div class="logo">
+        <img src="https://hubble.miraclesoft.com/assets/miracle-logo-dark.png" alt="Miracle">
+      </div>
+
+      <form class="login-form"
+            [formGroup]="loginForm"
+            (ngSubmit)="login()">
+
+        <label for="username">USERNAME</label>
+
+        <input
+          type="text"
+          id="username"
+          formControlName="username"
+          placeholder="Username">
+
+        <small
+          class="error"
+          *ngIf="loginForm.get('username')?.touched &&
+                 loginForm.get('username')?.hasError('required')">
+          Username is required
+        </small>
+
+        <small
+          class="error"
+          *ngIf="loginForm.get('username')?.touched &&
+                 loginForm.get('username')?.hasError('minlength')">
+          Username must be at least 3 characters
+        </small>
+
+        <label for="password">PASSWORD</label>
+
+        <input
+          type="password"
+          id="password"
+          formControlName="password"
+          placeholder="Password">
+
+        <small
+          class="error"
+          *ngIf="loginForm.get('password')?.touched &&
+                 loginForm.get('password')?.hasError('required')">
+          Password is required
+        </small>
+
+        <small
+          class="error"
+          *ngIf="loginForm.get('password')?.touched &&
+                 loginForm.get('password')?.hasError('minlength')">
+          Password must be at least 8 characters
+        </small>
+
+        <a class="forgot" href="https://hubble.miraclesoft.com/forgot-password">Forgot Password?</a>
+
+        <button class="btn btn-primary" type="submit">
+          <span class="icon">🔒</span>
+          Sign In
+        </button>
+
+        <p class="error" *ngIf="errorMessage">
+          {{ errorMessage }}
+        </p>
+
+      </form>
+
+    </div>
+  </div>
+</div>

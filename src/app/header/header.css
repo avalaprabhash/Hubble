@@ -1,0 +1,27 @@
+.header{
+    display: flex;
+    gap: 10px;
+}
+.links{
+    gap: 20px;
+    width: 90%;
+    display: flex;
+    padding: 10px 10px;
+}
+.profile{
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.nav-btn{
+    border: 0cap;
+    background: white;
+}
+.logout-btn {
+    border: 1px solid #d0d7de;
+    background: white;
+    border-radius: 4px;
+    padding: 6px 12px;
+    cursor: pointer;
+}

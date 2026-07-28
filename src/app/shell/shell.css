@@ -1,0 +1,15 @@
+.content {
+    display: flex;
+    flex: 1;
+    overflow: auto;
+}
+
+app-navbar {
+    width: 220px;
+    flex-shrink: 0;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
