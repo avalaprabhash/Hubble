@@ -1,1 +1,53 @@
-<p>calendar works!</p>
+<div class="calendar-page">
+  <div class="calendar-main">
+    <div class="calendar-panel">
+      <div class="calendar-header">
+        <div class="calendar-title-block">
+          <button class="nav-btn" type="button" (click)="previousMonth()">‹</button>
+          <span class="calendar-title">{{ monthLabel }}</span>
+          <button class="nav-btn" type="button" (click)="nextMonth()">›</button>
+        </div>
+        <button class="today-btn" type="button" (click)="resetToToday()">Today</button>
+      </div>
+
+      <div class="calendar-grid">
+        <div class="calendar-weekday" *ngFor="let day of dayNames">{{ day }}</div>
+        <button
+          type="button"
+          class="calendar-day"
+          *ngFor="let day of days"
+          [class.other-month]="day.otherMonth"
+          [class.today]="day.today"
+          [class.selected]="day.selected"
+          >
+          {{ day.label }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <aside class="calendar-sidebar">
+    <section class="calendar-card calendar-card--dark">
+      <div class="card-title">THIS WEEK</div>
+      <div class="card-body">
+        <img src="https://hubble.miraclesoft.com/assets/img/no-results.png" alt="No events" />
+        <p>No events found</p>
+      </div>
+    </section>
+
+    <section class="calendar-card calendar-card--blue">
+      <div class="card-title">HOLIDAYS</div>
+      <div class="card-action">+</div>
+    </section>
+
+    <section class="calendar-card calendar-card--blue">
+      <div class="card-title">BIRTHDAYS</div>
+      <div class="card-action">+</div>
+    </section>
+
+    <section class="calendar-card calendar-card--red">
+      <div class="card-title">LEAVES</div>
+      <div class="card-action">+</div>
+    </section>
+  </aside>
+</div>

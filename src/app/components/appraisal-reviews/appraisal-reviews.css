@@ -1,0 +1,39 @@
+.app {
+    background: whitesmoke;
+    padding: 20px;
+    height: 200px;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title h3,
+.title p {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.title p {
+    margin-top: 6px;
+    color: gray;
+}
+
+.badge {
+    background: rgb(42, 191, 255);
+    color: white;
+    padding: 10px 16px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+.list{
+    border: 1px solid grey;
+    padding: 10px 10px;
+    margin-top: 10px;
+    width: 100%;
+    font-weight: 10;
+    font-size: x-small;
+    color: grey;
+}

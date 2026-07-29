@@ -1,1 +1,96 @@
-<p>certifications works!</p>
+<div class="certification-page">
+    <div class="breadcrumb">
+        <span>HOME</span>
+        <span class="arrow">></span>
+        <span class="active">CERTIFICATIONS</span>
+    </div>
+
+    <div class="search-panel">
+        <div class="field">
+            <label>CERTIFICATION TITLE</label>
+            <input
+                type="text"
+                placeholder="Enter Certification Title"
+                [(ngModel)]="searchText"
+                (input)="filterCertifications()">
+        </div>
+
+        <div class="field">
+            <label>PARTNER</label>
+            <select
+                [(ngModel)]="selectedPartner"
+                (change)="filterCertifications()">
+                <option value="">Select Option</option>
+                <option
+                    *ngFor="let partner of partners"
+                    [value]="partner">
+                    {{partner}}
+                </option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label>PRACTICE</label>
+            <select
+                [(ngModel)]="selectedPractice"
+                (change)="filterCertifications()">
+                <option value="">Select Option</option>
+                <option
+                    *ngFor="let practice of practices"
+                    [value]="practice">
+                    {{practice}}
+                </option>
+            </select>
+        </div>
+
+        <button
+            class="search-btn"
+            (click)="filterCertifications()">
+            🔍 Search
+        </button>
+
+        <button
+            class="reset-btn"
+            (click)="resetFilters()">
+            ↻
+        </button>
+    </div>
+
+    <div class="section">
+        <h2>Open Certifications</h2>
+
+        <div class="card-grid">
+            <div
+                class="cert-card"
+                *ngFor="let cert of filteredCertifications">
+
+                <div class="card-header">
+                    <h3>{{cert.title}}</h3>
+
+                    <div class="header-bottom">
+                        <span class="badge">{{cert.code}}</span>
+                        <span class="date">{{cert.date}}</span>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <p>{{cert.practice}}</p>
+
+                    <button class="apply-btn">
+                        » Apply Now
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <div
+            class="no-data"
+            *ngIf="filteredCertifications.length===0">
+            <img
+                src="https://hubble.miraclesoft.com/assets/img/no-results.png"
+                alt="No Results">
+            <p>No certifications found.</p>
+        </div>
+    </div>
+</div>

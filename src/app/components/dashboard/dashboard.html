@@ -1,1 +1,73 @@
-<p>dashboard works!</p>
+<div class="dash">
+
+    <div class="timezone">
+        <strong>Timezones</strong>
+        <button class="btn btn-primary">Edit</button>
+
+        <table>
+            <tr *ngFor="let zone of timezones">
+                <td>{{zone.location}}</td>
+                <td>{{zone.time}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="not">
+
+        <div class="help">
+            <h3>Helpdesk</h3>
+
+            <table>
+                <tr *ngFor="let help of helpdesk">
+                    <td>{{help.issue}}</td>
+                    <td>{{help.status}}</td>
+                </tr>
+            </table>
+
+        </div>
+
+        <div class="event">
+            <h3>Upcoming Events</h3>
+
+            <table>
+                <tr *ngFor="let eve of events">
+                    <td>{{eve.date}}</td>
+                    <td>{{eve.event}}</td>
+                </tr>
+            </table>
+
+        </div>
+
+    </div>
+
+    <div class="art">
+
+        <h3>Latest Artifacts</h3>
+
+        <ul>
+            <li *ngFor="let art of artifacts">
+                {{art.file}}
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="Gallery">
+
+        <h3>Gallery</h3>
+
+        <div class="gallery-box">
+
+            <div
+                class="gallery-card"
+                *ngFor="let image of gallery">
+
+                📷 {{image}}
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

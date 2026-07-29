@@ -1,1 +1,65 @@
-<p>employee-search works!</p>
+<div class="no">
+    <ng-template #noemp>
+        <div class="nothing" >
+        <img src="https://hubble.miraclesoft.com/assets/img/no-results.png" alt="error">
+        <br>
+        <i style="color: grey;">Search for any Miraclite and view their profile.</i>
+        <br>
+        <i style="color: gray;">Please apply the required filter and search.</i>
+    </div>
+    </ng-template>
+
+    <table class="empt" *ngIf="filteredEmployees.length> 0; else noemp">
+        <tr *ngFor="let emp of paginatedEmployees" class="row">
+            
+            <td>{{ emp.employeeId | json }}</td>
+            <td>{{ emp.employeeName | json}}</td>
+            <td>{{ emp.department | json}}</td>
+            <td>{{ emp.workLocation | json}}</td>
+        </tr>
+    </table>
+<div>
+    <button
+    (click)="currentPage = currentPage - 1"
+    [disabled]="currentPage === 1">
+    <
+    </button>
+    <button
+      (click)="currentPage = currentPage + 1"
+      [disabled]="currentPage * pageSize >= filteredEmployees.length">
+      >
+    </button>
+</div>
+
+<div class="search">
+    <div class="form">
+        <label >Employee Search</label>
+        <input type="text" placeholder="Search by name, email or mobile" style="border: none;" [(ngModel)]="emp" (input)="filteredResult()">
+    </div>
+    <div class="filter">
+        <h3>Filter By</h3>
+        <br>
+        <div class="dept">
+            <label for="department">Department</label>
+        <select id="department" name="department" style="border: none;" [(ngModel)]="dept" (change)="filteredResult()">
+            <option value="">-- Select Department --</option>
+            <option value="Executive Board">Executive Board</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Operations">Operations</option>
+            <option value="Recruitment">Recruitment</option>
+            <option value="Sales">Sales</option>
+            <option value="Software Services">Software Services</option>
+        </select>
+        </div>
+        <div class="work">
+            <label for="loc">Work Location</label>
+            <select class="form-select" style="border: none;" [(ngModel)]="loc" (change)="filteredResult()">
+                <option value="">-- Select Work Location --</option>
+
+                <option *ngFor="let l of workLocations" [value]="l">{{l}}</option>
+               
+            </select>
+        </div>
+    </div>
+</div>
+</div>

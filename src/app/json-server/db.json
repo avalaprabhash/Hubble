@@ -1,0 +1,100 @@
+{
+  "employees": [
+    {
+      "employeeId": 1000,
+      "employeeName": "John Doe",
+      "department": "Software Services",
+      "workLocation": "Miracle City"
+    },
+    {
+      "employeeId": 1001,
+      "employeeName": "John Smith",
+      "department": "Engineering",
+      "workLocation": "Atlanta"
+    },
+    {
+      "employeeId": 1002,
+      "employeeName": "Emily Johnson",
+      "department": "Human Resources",
+      "workLocation": "Miracle City"
+    },
+    {
+      "employeeId": 1003,
+      "employeeName": "Michael Brown",
+      "department": "Finance",
+      "workLocation": "HQ (Novi)"
+    },
+    {
+      "employeeId": 1004,
+      "employeeName": "Sophia Davis",
+      "department": "Marketing",
+      "workLocation": "Work From Home"
+    },
+    {
+      "employeeId": 1005,
+      "employeeName": "Daniel Wilson",
+      "department": "Engineering",
+      "workLocation": "Miracle Heights"
+    },
+    {
+      "employeeId": 1006,
+      "employeeName": "Olivia Martinez",
+      "department": "Quality Assurance",
+      "workLocation": "Atlanta"
+    },
+    {
+      "employeeId": 1007,
+      "employeeName": "James Anderson",
+      "department": "Support",
+      "workLocation": "LB Colony"
+    },
+    {
+      "employeeId": 1008,
+      "employeeName": "Emma Thomas",
+      "department": "DevOps",
+      "workLocation": "Miracle Valley"
+    },
+    {
+      "employeeId": 1009,
+      "employeeName": "William Taylor",
+      "department": "Engineering",
+      "workLocation": "India - Other"
+    },
+    {
+      "employeeId": 1010,
+      "employeeName": "Ava Moore",
+      "department": "Business Analysis",
+      "workLocation": "Bentonville"
+    },
+    {
+      "employeeId": 1011,
+      "employeeName": "Benjamin Jackson",
+      "department": "Cyber Security",
+      "workLocation": "US - Other"
+    },
+    {
+      "employeeId": 1012,
+      "employeeName": "Charlotte White",
+      "department": "Data Engineering",
+      "workLocation": "Miracle City"
+    },
+    {
+      "employeeId": 1013,
+      "employeeName": "Lucas Harris",
+      "department": "Cloud Operations",
+      "workLocation": "Work From Home"
+    },
+    {
+      "employeeId": 1014,
+      "employeeName": "Mia Martin",
+      "department": "Engineering",
+      "workLocation": "Miracle Heights"
+    },
+    {
+      "employeeId": 1015,
+      "employeeName": "Ethan Thompson",
+      "department": "Product Management",
+      "workLocation": "HQ (Novi)"
+    }
+  ]
+}
