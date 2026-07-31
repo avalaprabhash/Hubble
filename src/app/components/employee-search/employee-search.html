@@ -9,6 +9,8 @@
     </div>
     </ng-template>
 
+    <p *ngIf="errorMessage">{{ errorMessage }}</p>
+
     <table class="empt" *ngIf="filteredEmployees.length> 0; else noemp">
         <tr *ngFor="let emp of paginatedEmployees" class="row">
             

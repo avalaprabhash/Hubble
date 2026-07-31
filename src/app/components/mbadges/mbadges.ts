@@ -6,4 +6,5 @@ import { Component } from '@angular/core';
   templateUrl: './mbadges.html',
   styles: ``,
 })
+// Placeholder component for the mBadges view.
 export class Mbadges {}

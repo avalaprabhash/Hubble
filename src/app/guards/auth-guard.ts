@@ -10,5 +10,6 @@ export const authGuard: CanActivateFn = () => {
     return true;
   }
 
+  // Redirect unauthenticated users before the protected shell is activated.
   return router.createUrlTree(['/login']);
 };

@@ -1,31 +1,15 @@
-:root{
-  --panel-width: 380px;
-  --brand: #2fb5e6;
-  --muted: #9aa7b2;
-}
-
-*{box-sizing:border-box}
-html,body,#root,app-root{height:100%;}
 
 .login-page{
   display:flex;
   min-height:100vh;
-  font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
 .login-hero{
   flex:1 1 auto;
-  background-image: url('/assets/login-hero.jpg');
+  background-image: url('https://img.magnific.com/free-photo/flat-lay-workstation-with-copy-space-laptop_23-2148430867.jpg?semt=ais_test_b&w=740&q=80');
   background-size: cover;
   background-position: center;
   position:relative;
-}
-
-.login-hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background: rgba(11,32,39,0.55);
 }
 
 .login-panel{
@@ -87,9 +71,3 @@ html,body,#root,app-root{height:100%;}
 .icon{display:inline-block}
 
 .error{ color:#b00020; margin-top:12px }
-
-@media (max-width:900px){
-  .login-page{ flex-direction:column }
-  .login-hero{ height:240px; width:100% }
-  .login-panel{ width:100%; box-shadow:none; padding:28px }
-}

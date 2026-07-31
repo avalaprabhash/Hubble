@@ -6,4 +6,5 @@ import { Component } from '@angular/core';
   templateUrl: './comp-offs.html',
   styles: ``,
 })
+// Placeholder component for future comp-off content.
 export class CompOffs {}

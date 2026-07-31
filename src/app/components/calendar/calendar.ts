@@ -28,6 +28,7 @@ export class Calendar {
 
   buildCalendar() {
 
+    // Start from the first visible Sunday so the grid always fills six weeks.
     const start = new Date(this.activeMonth.getFullYear(),this.activeMonth.getMonth(),1);
 
     start.setDate(start.getDate() - start.getDay());
@@ -39,6 +40,7 @@ export class Calendar {
       const current = new Date(start);
       current.setDate(start.getDate() + i);
 
+      // Store render-friendly state for each day cell.
       this.days.push({
         date: current,
         label: current.getDate(),
@@ -66,6 +68,7 @@ export class Calendar {
   }
 
   isSameDay(a: Date, b: Date) {
+    // Ignore time values when comparing calendar selections.
     return (
       a.getDate() === b.getDate() &&
       a.getMonth() === b.getMonth() &&

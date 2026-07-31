@@ -23,6 +23,7 @@ export class Certifications {
   selectedPartner = '';
   selectedPractice = '';
 
+  // Static certification catalog used to drive the filterable list.
   certifications: Certification[] = [
     {
       id: 1,
@@ -101,6 +102,7 @@ export class Certifications {
 
     this.filteredCertifications = this.certifications.filter(cert => {
 
+      // Combine text search with the selected dropdown filters.
       const matchesTitle =
         search === '' ||
         cert.title.toLowerCase().includes(search);
@@ -128,6 +130,7 @@ export class Certifications {
     this.selectedPartner = '';
     this.selectedPractice = '';
 
+    // Restore the unfiltered list when the user clears all filters.
     this.filteredCertifications = [...this.certifications];
 
   }

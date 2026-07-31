@@ -13,6 +13,7 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 })
 export class Login {
 
+  // Reactive form validation keeps invalid credentials from being submitted empty.
   loginForm = new FormGroup({
     username: new FormControl('',[Validators.required, Validators.minLength(3)]),
     password: new FormControl('',[Validators.required, Validators.minLength(8)])
@@ -24,6 +25,8 @@ export class Login {
   login(){
     const username = this.loginForm.value.username!;
     const password = this.loginForm.value.password!;
+
+    // Delegate the credential check to the auth service before routing.
     if(this.auth.login(username,password)){
       this.router.navigate(['/dashboard']);
     }

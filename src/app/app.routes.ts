@@ -4,7 +4,6 @@ import { Calendar } from './components/calendar/calendar';
 import { Certifications } from './components/certifications/certifications';
 import { CompOffs } from './components/comp-offs/comp-offs';
 import { Dashboard } from './components/dashboard/dashboard';
-import { EmployeeSearch } from './components/employee-search/employee-search';
 import { Hierarchy } from './components/hierarchy/hierarchy';
 import { Leaves } from './components/leaves/leaves';
 import { Mbadges } from './components/mbadges/mbadges';
@@ -20,6 +19,7 @@ export const routes: Routes = [
   {
     path: '',
     component: Shell,
+    // Keep the main shell behind authentication.
     canActivate: [authGuard],
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -29,7 +29,10 @@ export const routes: Routes = [
       { path: 'payroll', component: Payroll },
       { path: 'leaves', component: Leaves },
       { path: 'hierarchy', component: Hierarchy },
-      { path: 'employee-search', component: EmployeeSearch },
+      // Lazy-load the search screen because it is only needed on demand.
+      { path: 'employee-search', loadComponent: () =>
+      import('./components/employee-search/employee-search')
+        .then(m => m.EmployeeSearch)  },
       { path: 'appraisal-reviews', component: AppraisalReviews },
       { path: 'timesheets', component: Timesheets },
       { path: 'badges', component: Mbadges },
@@ -37,5 +40,6 @@ export const routes: Routes = [
       { path: 'compoff', component: CompOffs }
     ]
   },
+  // Send unknown URLs back to the login entry point.
   { path: '**', redirectTo: 'login' }
 ];

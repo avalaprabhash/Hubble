@@ -6,4 +6,5 @@ import { Component } from '@angular/core';
   templateUrl: './payments.html',
   styles: ``,
 })
+// Placeholder component for the payments view.
 export class Payments {}

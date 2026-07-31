@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 })
 export class Dashboard {
 
+  // Sample dashboard widgets are currently backed by static data.
   timezones = [
     { location: 'India (IST)', time: '10:30 AM' },
     { location: 'New York (EST)', time: '01:00 AM' },

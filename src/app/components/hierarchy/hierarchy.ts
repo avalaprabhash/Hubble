@@ -6,4 +6,5 @@ import { Component } from '@angular/core';
   templateUrl: './hierarchy.html',
   styles: ``,
 })
+// Placeholder component for the hierarchy route.
 export class Hierarchy {}

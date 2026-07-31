@@ -6,4 +6,5 @@ import { Component } from '@angular/core';
   templateUrl: './timesheets.html',
   styles: ``,
 })
+// Placeholder component for the timesheets view.
 export class Timesheets {}

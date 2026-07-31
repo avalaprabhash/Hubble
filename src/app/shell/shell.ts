@@ -15,6 +15,7 @@ export class Shell {
   protected showNavbar = true;
 
   protected toggleNavbar() {
+    // Let the header collapse the sidebar on smaller layouts.
     this.showNavbar = !this.showNavbar;
   }
 }

@@ -19,11 +19,13 @@ export class Header {
   constructor(private auth: Auth, private router: Router) {}
 
   toggleNavBar(){
+    // Bubble the toggle event up to the shell so it owns layout state.
     this.navbarToggle.emit();
   }
 
   logout() {
     this.auth.logout();
+    // Return to the login screen immediately after clearing the session.
     this.router.navigate(['/login']);
   }
 }

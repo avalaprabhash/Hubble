@@ -6,4 +6,5 @@ import { Component } from '@angular/core';
   templateUrl: './leaves.html',
   styles: ``,
 })
+// Placeholder component for the leaves view.
 export class Leaves {}

@@ -11,6 +11,7 @@ import { RouterLink } from "@angular/router";
 })
 export class Navbar {
 
+  // Centralize sidebar items so the template only renders the configured links.
   navLinks = [
     { label: 'Appraisal Reviews',  path: '/appraisal-reviews',  icon: '📋' },
     { label: 'Calendar',           path: '/calendar',           icon: '📅' },
