@@ -1,6 +1,7 @@
 <app-header (navbarToggle)="toggleNavbar()"></app-header>
 
 <div class="content">
+  <!-- Structural directive topic: `*ngIf` removes the sidebar from the DOM when it is collapsed. -->
   <app-navbar *ngIf="showNavbar"></app-navbar>
   <main>
     <router-outlet></router-outlet>

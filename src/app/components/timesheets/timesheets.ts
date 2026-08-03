@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+// Component topic: provide a standalone entry point for the timesheets page.
 @Component({
   selector: 'app-timesheets',
   imports: [],

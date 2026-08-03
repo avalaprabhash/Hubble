@@ -1,3 +1,4 @@
 <nav class="nav">
+    <!-- Loop topic: `*ngFor` repeats one anchor per configured navigation item. -->
     <a *ngFor="let n of navLinks" [routerLink]="n.path">{{n.icon}} {{n.label}} </a>
 </nav>

@@ -14,6 +14,7 @@ import { Login } from './login/login';
 import { authGuard } from './guards/auth-guard';
 import { Shell } from './shell/shell';
 
+// Routing topic: define public login access and protected child routes under the shell.
 export const routes: Routes = [
   { path: 'login', component: Login },
   {

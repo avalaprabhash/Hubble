@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Timesheets } from './timesheets';
 
+// Component test topic: verify the timesheets placeholder compiles successfully.
 describe('Timesheets', () => {
   let component: Timesheets;
   let fixture: ComponentFixture<Timesheets>;

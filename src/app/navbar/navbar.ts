@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from "@angular/router";
 
+// Navigation topic: expose a route list for the template to render with router links.
 @Component({
   selector: 'app-navbar',
   standalone: true,

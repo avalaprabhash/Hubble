@@ -3,6 +3,7 @@ import { provideRouter } from '@angular/router';
 
 import { Header } from './header';
 
+// Component test topic: create the header with router support for logout navigation.
 describe('Header', () => {
   let component: Header;
   let fixture: ComponentFixture<Header>;

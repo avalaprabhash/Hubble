@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+// Interface topic: define the fields each certification card needs to render and filter.
 interface Certification {
   id: number;
   title: string;
@@ -18,6 +19,7 @@ interface Certification {
   templateUrl: './certifications.html',
   styleUrls: ['./certifications.css']
 })
+// Filter topic: manage a searchable certification catalog with dropdown refinements.
 export class Certifications {
   searchText = '';
   selectedPartner = '';

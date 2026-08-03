@@ -10,9 +10,8 @@ import {
 import { Observable, tap } from 'rxjs';
 
 /**
- * Simple interceptor that logs all outgoing HTTP requests along with their
- * corresponding responses (or errors) to the browser console. Execution time
- * is also logged to help with performance analysis during development.
+ * Interceptor topic: inspect every HTTP request/response pair in one central place.
+ * The interceptor logs request metadata, response timing, and failures for debugging.
  *
  * NOTE: This interceptor is registered globally in {@link appConfig}. It is
  * intended for development / debugging use. Remove or adapt the console calls

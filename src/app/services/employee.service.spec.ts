@@ -3,6 +3,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { EmployeeService } from './employee.service';
 
+// HTTP testing topic: simulate API success, fallback loading, and total failure paths.
 describe('EmployeeService', () => {
   let service: EmployeeService;
   let httpMock: HttpTestingController;

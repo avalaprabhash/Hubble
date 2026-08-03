@@ -11,6 +11,7 @@
 
     <p *ngIf="errorMessage">{{ errorMessage }}</p>
 
+    <!-- Conditional rendering topic: show the table only when filtered results exist. -->
     <table class="empt" *ngIf="filteredEmployees.length> 0; else noemp">
         <tr *ngFor="let emp of paginatedEmployees" class="row">
             
@@ -36,6 +37,7 @@
 <div class="search">
     <div class="form">
         <label >Employee Search</label>
+        <!-- Two-way binding topic: `[(ngModel)]` keeps the input value and component state synchronized. -->
         <input type="text" placeholder="Search by name, email or mobile" style="border: none;" [(ngModel)]="emp" (input)="filteredResult()">
     </div>
     <div class="filter">

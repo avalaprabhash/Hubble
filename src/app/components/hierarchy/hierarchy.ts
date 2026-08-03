@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+// Component topic: keep the hierarchy route wired while feature content is pending.
 @Component({
   selector: 'app-hierarchy',
   imports: [],

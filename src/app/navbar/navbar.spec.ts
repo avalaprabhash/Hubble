@@ -3,6 +3,7 @@ import { provideRouter } from '@angular/router';
 
 import { Navbar } from './navbar';
 
+// Component test topic: create the standalone navbar with router dependencies stubbed.
 describe('Navbar', () => {
   let component: Navbar;
   let fixture: ComponentFixture<Navbar>;

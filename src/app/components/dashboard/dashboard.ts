@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+// Dashboard topic: expose static widget data for the home screen sections.
 @Component({
   selector: 'app-dashboard',
   standalone: true,
@@ -32,6 +33,7 @@ export class Dashboard {
     { date: 'Aug 10', event: 'Hackathon' }
   ];
 
+  // List topic: these artifact names are rendered with `*ngFor` in the template.
   artifacts = [
     { file: 'Angular Guide.pdf' },
     { file: 'Employee Handbook.pdf' },
@@ -39,6 +41,7 @@ export class Dashboard {
   
   ];
 
+  // Card topic: gallery labels are mapped into simple visual tiles.
   gallery = [
     'Annual Meet',
     'Hackathon',

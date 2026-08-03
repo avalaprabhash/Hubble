@@ -10,6 +10,7 @@ import { Component } from '@angular/core';
 })
 export class Calendar {
 
+  // Array topic: weekday labels drive the repeated header cells in the template.
   dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   days: any[] = [];
   activeMonth = new Date();

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Auth } from '../services/auth';
 
 
+// Communication topic: emit layout actions upward and handle logout from a shared header.
 @Component({
   selector: 'app-header',
   standalone: true,

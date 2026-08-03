@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Employee } from '../../models/employee';
 import { EmployeeService } from '../../services/employee.service';
 
+// Search topic: load employees once, then filter and paginate them on the client.
 @Component({
   selector: 'app-employee-search',
   imports: [CommonModule, FormsModule],
@@ -36,8 +37,10 @@ export class EmployeeSearch implements OnInit {
   loc = '';
   errorMessage = '';
 
-  constructor(private employeeService: EmployeeService) {}
-
+  constructor(private employeeService: EmployeeService) {
+    console.log('DashboardComponent Loaded');
+  }
+  
   ngOnInit(): void {
     this.loadEmployees();
   }
@@ -50,6 +53,7 @@ export class EmployeeSearch implements OnInit {
   }
 
   filteredResult() {
+    // Filtering topic: combine text search with department and location dropdowns.
     const search = this.emp.toLowerCase().trim();
 
     this.filteredEmployees = this.employees.filter((employee) => {
@@ -78,6 +82,7 @@ export class EmployeeSearch implements OnInit {
   loadEmployees() {
     this.errorMessage = '';
 
+    // Observable topic: subscribe once to hydrate the table and handle empty/error states.
     this.employeeService.getEmployees().subscribe({
       next: (data) => {
         this.employees = data;

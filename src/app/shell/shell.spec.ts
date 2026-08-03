@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
 import { Shell } from './shell';
 
+// Component test topic: verify the shell can render its shared layout pieces.
 describe('Shell', () => {
   let component: Shell;
   let fixture: ComponentFixture<Shell>;

@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { Header } from '../header/header';
 import { Navbar } from '../navbar/navbar';
 
+// Layout topic: the shell owns shared chrome such as the header, sidebar, and routed content.
 @Component({
   selector: 'app-shell',
   standalone: true,

@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   templateUrl: './appraisal-reviews.html',
   styleUrls: ['./appraisal-reviews.css'],
 })
-// Placeholder component until appraisal review interactions are added.
+
 export class AppraisalReviews {}

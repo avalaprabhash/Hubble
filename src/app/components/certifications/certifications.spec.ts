@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Certifications } from './certifications';
 
+// Component test topic: ensure the certifications screen compiles with standalone imports.
 describe('Certifications', () => {
   let component: Certifications;
   let fixture: ComponentFixture<Certifications>;

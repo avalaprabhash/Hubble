@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Calendar } from './calendar';
 
+// Component test topic: ensure the standalone calendar can be instantiated in isolation.
 describe('Calendar', () => {
   let component: Calendar;
   let fixture: ComponentFixture<Calendar>;

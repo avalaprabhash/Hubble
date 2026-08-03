@@ -12,6 +12,8 @@
             [formGroup]="loginForm"
             (ngSubmit)="login()">
 
+        <!-- Reactive forms topic: `formControlName` wires each input to the shared form model. -->
+
         <label for="username">USERNAME</label>
 
         <input
@@ -60,7 +62,7 @@
 
         <button class="btn btn-primary" type="submit">
           <span class="icon">🔒</span>
-          Sign In
+          {{ isSubmitting ? 'Signing In...' : 'Sign In' }}
         </button>
 
         <p class="error" *ngIf="errorMessage">

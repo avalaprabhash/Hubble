@@ -11,6 +11,7 @@
       </div>
 
       <div class="calendar-grid">
+        <!-- Nested loops topic: one `*ngFor` prints weekday headers and another prints each day cell. -->
         <div class="calendar-weekday" *ngFor="let day of dayNames">{{ day }}</div>
         <button
           type="button"

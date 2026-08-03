@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Leaves } from './leaves';
 
+// Component test topic: verify the leaves placeholder can be instantiated.
 describe('Leaves', () => {
   let component: Leaves;
   let fixture: ComponentFixture<Leaves>;

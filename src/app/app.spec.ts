@@ -2,6 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
 import { App } from './app';
 
+// TestBed topic: compile the standalone root component with a minimal router setup.
 describe('App', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({

@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Payroll } from './payroll';
 
+// Component test topic: verify the payroll placeholder component can be built.
 describe('Payroll', () => {
   let component: Payroll;
   let fixture: ComponentFixture<Payroll>;

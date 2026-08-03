@@ -3,7 +3,9 @@ import { Component } from '@angular/core';
 import { Auth } from '../services/auth';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { finalize } from 'rxjs';
 
+// Reactive forms topic: capture credentials, validate input, and route on successful login.
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -20,19 +22,32 @@ export class Login {
   });
   
   errorMessage = "";
+  isSubmitting = false;
   constructor(private auth: Auth, private router : Router){}
   
   login(){
+    if (this.loginForm.invalid || this.isSubmitting) {
+      this.loginForm.markAllAsTouched();
+      return;
+    }
+
     const username = this.loginForm.value.username!;
     const password = this.loginForm.value.password!;
+    this.errorMessage = "";
+    this.isSubmitting = true;
 
     // Delegate the credential check to the auth service before routing.
-    if(this.auth.login(username,password)){
-      this.router.navigate(['/dashboard']);
-    }
-    else{
-      this.errorMessage = "Invalid Credentials";
-    }
+    this.auth
+      .login(username, password)
+      .pipe(finalize(() => (this.isSubmitting = false)))
+      .subscribe((isAuthenticated) => {
+        if (isAuthenticated) {
+          this.router.navigate(['/dashboard']);
+          return;
+        }
+
+        this.errorMessage = "Invalid Credentials";
+      });
   }
   logout(){
     this.auth.logout();

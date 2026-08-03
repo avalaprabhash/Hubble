@@ -5,6 +5,7 @@
         <button class="btn btn-primary">Edit</button>
 
         <table>
+            <!-- Loop topic: each timezone row is rendered from the static array in the component. -->
             <tr *ngFor="let zone of timezones">
                 <td>{{zone.location}}</td>
                 <td>{{zone.time}}</td>

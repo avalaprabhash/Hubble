@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+// Component topic: reserve the comp-off page until real interactions are added.
 @Component({
   selector: 'app-comp-offs',
   imports: [],
