@@ -46,6 +46,7 @@ export class Auth {
     if (!token) return false;
     const payload = this.parseJwt(token);
     if (!payload?.exp) return false;
+    // converting milliseconds -> seconds
     return Date.now() / 1000 < payload.exp;
   }
 

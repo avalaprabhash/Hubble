@@ -23,7 +23,7 @@ export class LoggingInterceptor implements HttpInterceptor {
     const started = Date.now();
 
     // Clone the request to ensure immutability and allow for safe logging.
-    const requestClone = req.clone();
+    const requestClone = req.clone(); 
 
     console.log('[HTTP] Request', {
       method: requestClone.method,
@@ -33,6 +33,7 @@ export class LoggingInterceptor implements HttpInterceptor {
     });
 
     return next.handle(requestClone).pipe(
+      //tap() is an RxJS operator used to perform side effects without changing the data flowing through the Observable.
       tap({
         next: (event: HttpEvent<unknown>) => {
           if (event instanceof HttpResponse) {
