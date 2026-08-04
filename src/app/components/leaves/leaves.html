@@ -1,45 +1,74 @@
 <div class="leaves-page">
-  <div class="search-panel">
-    <div class="field">
-      <label>START</label>
-      <input type="date" [(ngModel)]="startDate" (change)="filterLeaves()">
-    </div>
-    <div class="field">
-      <label>END</label>
-      <input type="date" [(ngModel)]="endDate" (change)="filterLeaves()">
-    </div>
-    <div class="field">
-      <label>STATUS</label>
-      <select [(ngModel)]="selectedStatus" (change)="filterLeaves()">
-        <option value="">Select Option</option>
-        <option *ngFor="let status of statuses" [value]="status">{{ status }}</option>
-      </select>
-    </div>
-    <button class="search-btn" type="button" (click)="filterLeaves()">Search</button>
-    <button class="request-btn" type="button" (click)="resetFilters()">Reset</button>
-  </div>
-
-  <div class="results-section">
-    <div class="card-grid" *ngIf="filteredLeaves.length > 0">
-      <div class="leave-card" *ngFor="let leave of filteredLeaves">
-        <div class="leave-card__header">
-          <div>
-            <h3>{{ leave.type }}</h3>
-            <p>{{ leave.appliedOn }}</p>
-          </div>
-          <span class="status-pill {{ leave.status.toLowerCase() }}">{{ leave.status }}</span>
-        </div>
-        <div class="leave-card__body">
-          <div>From: {{ leave.startDate }}</div>
-          <div>To: {{ leave.endDate }}</div>
-          <div>Days: {{ leave.days }}</div>
-          <div>Reason: {{ leave.reason }}</div>
-        </div>
-      </div>
+    <div class="breadcrumb">
+        <span>HOME</span>
+        <span class="arrow">></span>
+        <span class="active">LEAVES</span>
     </div>
 
-    <div class="no-data" *ngIf="filteredLeaves.length === 0">
-      <p>No leaves found</p>
+    <div class="search-panel">
+        <div class="field">
+            <label>START</label>
+            <input
+                type="date"
+                [(ngModel)]="startDate"
+                (change)="filterLeaves()"
+                placeholder="Start Date">
+        </div>
+
+        <div class="field">
+            <label>END</label>
+            <input
+                type="date"
+                [(ngModel)]="endDate"
+                (change)="filterLeaves()"
+                placeholder="End Date">
+        </div>
+
+        <div class="field">
+            <label>STATUS</label>
+            <select
+                [(ngModel)]="selectedStatus"
+                (change)="filterLeaves()">
+                <option value="">Select Option</option>
+                <option *ngFor="let status of statuses" [value]="status">
+                    {{ status }}
+                </option>
+            </select>
+        </div>
+
+        <button class="search-btn" type="button" (click)="filterLeaves()">
+            🔍 Search
+        </button>
+
+        <button class="request-btn" type="button" (click)="resetFilters()">
+            + Request
+        </button>
     </div>
-  </div>
+
+    <div class="results-section">
+        <div class="card-grid" *ngIf="filteredLeaves.length > 0">
+            <div class="leave-card" *ngFor="let leave of filteredLeaves">
+                <div class="leave-card__header">
+                    <div>
+                        <h3>{{ leave.type }}</h3>
+                        <p>{{ leave.appliedOn }} Applied</p>
+                    </div>
+                    <span class="status-pill" [ngClass]="leave.status.toLowerCase()">
+                        {{ leave.status }}
+                    </span>
+                </div>
+                <div class="leave-card__body">
+                    <span><strong>From:</strong> {{ leave.startDate }}</span>
+                    <span><strong>To:</strong> {{ leave.endDate }}</span>
+                    <span><strong>Days:</strong> {{ leave.days }}</span>
+                    <span><strong>Reason:</strong> {{ leave.reason }}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="no-data" *ngIf="filteredLeaves.length === 0">
+            <img src="https://hubble.miraclesoft.com/assets/img/no-results.png" alt="No leaves found">
+            <p>Sorry, we weren’t able to find any Leaves</p>
+        </div>
+    </div>
 </div>
