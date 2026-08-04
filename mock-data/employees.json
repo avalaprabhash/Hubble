@@ -1,0 +1,20 @@
+[
+  {
+    "employeeId": 1001,
+    "employeeName": "John Doe",
+    "department": "Software Services",
+    "workLocation": "Miracle City"
+  },
+  {
+    "employeeId": 1002,
+    "employeeName": "Jane Smith",
+    "department": "Marketing",
+    "workLocation": "Atlanta"
+  },
+  {
+    "employeeId": 1003,
+    "employeeName": "Ravi Kumar",
+    "department": "Operations",
+    "workLocation": "HQ (Novi)"
+  }
+]
