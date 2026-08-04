@@ -11,28 +11,27 @@
 
     <p *ngIf="errorMessage">{{ errorMessage }}</p>
 
-    <!-- Conditional rendering topic: show the table only when filtered results exist. -->
-    <table class="empt" *ngIf="filteredEmployees.length> 0; else noemp">
-        <tr *ngFor="let emp of paginatedEmployees" class="row">
-            
-            <td>{{ emp.employeeId | json }}</td>
-            <td>{{ emp.employeeName | json}}</td>
-            <td>{{ emp.department | json}}</td>
-            <td>{{ emp.workLocation | json}}</td>
-        </tr>
-    </table>
-<div>
-    <button
-    (click)="currentPage = currentPage - 1"
-    [disabled]="currentPage === 1">
-    <
-    </button>
-    <button
-      (click)="currentPage = currentPage + 1"
-      [disabled]="currentPage * pageSize >= filteredEmployees.length">
-      >
-    </button>
-</div>
+    <div *ngIf="filteredEmployees.length > 0; else noemp" class="results-block">
+      <div class="result-header">
+        <div class="result-count">{{ filteredEmployees.length }} results</div>
+        <div class="pagination">
+          <button (click)="currentPage = currentPage - 1" [disabled]="currentPage === 1">&lt;</button>
+          <button (click)="currentPage = currentPage + 1" [disabled]="currentPage * pageSize >= filteredEmployees.length">&gt;</button>
+        </div>
+      </div>
+      <div class="result-list">
+        <div class="result-row" *ngFor="let emp of paginatedEmployees">
+          <div class="row-left">
+            <div class="employee-name">{{ emp.employeeName }}</div>
+            <div class="employee-id">ID: {{ emp.employeeId }}</div>
+          </div>
+          <div class="row-right">
+            <div class="employee-meta">{{ emp.department }}</div>
+            <div class="employee-meta">{{ emp.workLocation }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 <div class="search">
     <div class="form">
