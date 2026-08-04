@@ -26,30 +26,30 @@ export class CompOffs {
   statuses = ['Pending', 'Approved', 'Rejected'];
 
   compOffs: CompOffRequest[] = [
-    // {
-    //   id: 1,
-    //   employee: 'Prabhash Avala',
-    //   status: 'Pending',
-    //   appliedOn: '2026-07-01',
-    //   compOffDate: '2026-07-05',
-    //   reason: 'Client site weekend support',
-    // },
-    // {
-    //   id: 2,
-    //   employee: 'Ananya Sharma',
-    //   status: 'Approved',
-    //   appliedOn: '2026-06-22',
-    //   compOffDate: '2026-06-28',
-    //   reason: 'Project delivery support',
-    // },
-    // {
-    //   id: 3,
-    //   employee: 'Rohit Mehta',
-    //   status: 'Rejected',
-    //   appliedOn: '2026-07-02',
-    //   compOffDate: '2026-07-09',
-    //   reason: 'Emergency maintenance release',
-    // },
+    {
+      id: 1,
+      employee: 'Prabhash Avala',
+      status: 'Pending',
+      appliedOn: '2026-07-01',
+      compOffDate: '2026-07-05',
+      reason: 'Client site weekend support',
+    },
+    {
+      id: 2,
+      employee: 'Ananya Sharma',
+      status: 'Approved',
+      appliedOn: '2026-06-22',
+      compOffDate: '2026-06-28',
+      reason: 'Project delivery support',
+    },
+    {
+      id: 3,
+      employee: 'Rohit Mehta',
+      status: 'Rejected',
+      appliedOn: '2026-07-02',
+      compOffDate: '2026-07-09',
+      reason: 'Emergency maintenance release',
+    },
   ];
 
   filteredCompOffs: CompOffRequest[] = [...this.compOffs];
