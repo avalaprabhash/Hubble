@@ -1,1 +1,45 @@
-<p>leaves works!</p>
+<div class="leaves-page">
+  <div class="search-panel">
+    <div class="field">
+      <label>START</label>
+      <input type="date" [(ngModel)]="startDate" (change)="filterLeaves()">
+    </div>
+    <div class="field">
+      <label>END</label>
+      <input type="date" [(ngModel)]="endDate" (change)="filterLeaves()">
+    </div>
+    <div class="field">
+      <label>STATUS</label>
+      <select [(ngModel)]="selectedStatus" (change)="filterLeaves()">
+        <option value="">Select Option</option>
+        <option *ngFor="let status of statuses" [value]="status">{{ status }}</option>
+      </select>
+    </div>
+    <button class="search-btn" type="button" (click)="filterLeaves()">Search</button>
+    <button class="request-btn" type="button" (click)="resetFilters()">Reset</button>
+  </div>
+
+  <div class="results-section">
+    <div class="card-grid" *ngIf="filteredLeaves.length > 0">
+      <div class="leave-card" *ngFor="let leave of filteredLeaves">
+        <div class="leave-card__header">
+          <div>
+            <h3>{{ leave.type }}</h3>
+            <p>{{ leave.appliedOn }}</p>
+          </div>
+          <span class="status-pill {{ leave.status.toLowerCase() }}">{{ leave.status }}</span>
+        </div>
+        <div class="leave-card__body">
+          <div>From: {{ leave.startDate }}</div>
+          <div>To: {{ leave.endDate }}</div>
+          <div>Days: {{ leave.days }}</div>
+          <div>Reason: {{ leave.reason }}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="no-data" *ngIf="filteredLeaves.length === 0">
+      <p>No leaves found</p>
+    </div>
+  </div>
+</div>

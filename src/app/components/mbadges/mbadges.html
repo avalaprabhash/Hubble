@@ -1,1 +1,80 @@
-<p>mbadges works!</p>
+<div class="mbadges-page">
+    <div class="breadcrumb">
+        <span>HOME</span>
+        <span class="arrow">></span>
+        <span class="active">MBADGES</span>
+    </div>
+
+    <div class="search-panel">
+        <div class="field">
+            <label>BADGE TITLE</label>
+            <input
+                type="text"
+                placeholder="Enter Badge Title"
+                [(ngModel)]="searchText"
+                (input)="filterBadges()">
+        </div>
+
+        <button class="search-btn" type="button" (click)="filterBadges()">
+            🔍 Search
+        </button>
+
+        <button class="reset-btn" type="button" (click)="resetFilters()">
+            ↻
+        </button>
+    </div>
+
+    <div class="results-section">
+        <div class="tabs">
+            <button
+                class="tab"
+                [class.active]="selectedTab === 'Assigned'"
+                (click)="selectTab('Assigned')">
+                ASSIGNED <span>{{ badges.filter(b => b.status === 'Assigned').length }}</span>
+            </button>
+            <button
+                class="tab"
+                [class.active]="selectedTab === 'Available'"
+                (click)="selectTab('Available')">
+                AVAILABLE <span>{{ badges.filter(b => b.status === 'Available').length }}</span>
+            </button>
+            <button
+                class="tab"
+                [class.active]="selectedTab === 'Attempted'"
+                (click)="selectTab('Attempted')">
+                ATTEMPTED <span>{{ badges.filter(b => b.status === 'Attempted').length }}</span>
+            </button>
+            <button
+                class="tab"
+                [class.active]="selectedTab === 'Certified'"
+                (click)="selectTab('Certified')">
+                CERTIFIED <span>{{ badges.filter(b => b.status === 'Certified').length }}</span>
+            </button>
+        </div>
+
+        <div class="card-grid" *ngIf="filteredBadges.length > 0">
+            <div class="badge-card" *ngFor="let badge of filteredBadges">
+                <div class="badge-card__hero">
+                    <div>
+                        <div class="badge-label">{{ badge.questions }} Questions</div>
+                        <h3>{{ badge.title }}</h3>
+                    </div>
+                    <div class="badge-status">{{ badge.status }}</div>
+                </div>
+                <div class="badge-card__body">
+                    <span>By {{ badge.author }}</span>
+                    <span>{{ badge.duration }}</span>
+                </div>
+                <div class="badge-card__footer">
+                    <span>Expires: {{ badge.expiresOn }}</span>
+                    <button class="action-btn">View</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="no-data" *ngIf="filteredBadges.length === 0">
+            <img src="https://hubble.miraclesoft.com/assets/img/no-results.png" alt="No badges found">
+            <p>No badges match your search.</p>
+        </div>
+    </div>
+</div>

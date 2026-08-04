@@ -1,1 +1,78 @@
-<p>comp-offs works!</p>
+<div class="comp-off-page">
+    <div class="breadcrumb">
+        <span>HOME</span>
+        <span class="arrow">></span>
+        <span class="active">COMP OFF</span>
+    </div>
+
+    <div class="search-panel">
+        <div class="field">
+            <label>COMP OFF STATUS</label>
+            <select
+                [(ngModel)]="selectedStatus"
+                (change)="filterCompOffs()">
+                <option value="">Select Option</option>
+                <option *ngFor="let status of statuses" [value]="status">
+                    {{ status }}
+                </option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label>FROM DATE</label>
+            <input
+                type="date"
+                [(ngModel)]="fromDate"
+                (change)="filterCompOffs()">
+        </div>
+
+        <div class="field">
+            <label>TO DATE</label>
+            <input
+                type="date"
+                [(ngModel)]="toDate"
+                (change)="filterCompOffs()">
+        </div>
+
+        <button
+            class="refresh-btn"
+            type="button"
+            (click)="resetFilters()">
+            ↻
+        </button>
+
+        <button
+            class="search-btn"
+            type="button"
+            (click)="filterCompOffs()">
+            🔍 Search
+        </button>
+    </div>
+
+    <div class="results-section">
+        <div class="section-title">Comp Off Requests</div>
+
+        <div class="card-grid" *ngIf="filteredCompOffs.length > 0">
+            <div class="comp-card" *ngFor="let request of filteredCompOffs">
+                <div class="comp-card__header">
+                    <h3>{{ request.employee }}</h3>
+                    <div class="status-pill" [ngClass]="statusClass(request.status)">
+                        {{ request.status }}
+                    </div>
+                </div>
+                <div class="comp-card__body">
+                    <span><strong>Applied On:</strong> {{ request.appliedOn }}</span>
+                    <span><strong>Comp Off Date:</strong> {{ request.compOffDate }}</span>
+                    <span><strong>Reason:</strong> {{ request.reason }}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="no-data" *ngIf="filteredCompOffs.length === 0">
+            <img
+                src="https://hubble.miraclesoft.com/assets/img/no-results.png"
+                alt="No matches found">
+            <p>There are no matches found</p>
+        </div>
+    </div>
+</div>
