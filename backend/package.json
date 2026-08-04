@@ -6,4 +6,6 @@
     "start": "cross-env-shell \"json-server db.json --host 0.0.0.0 --port ${PORT:-3000}\""
   },
   "dependencies": {
-    "json-ser
+    "json-server": "^1.0.0-beta.3"
+  }
+}
