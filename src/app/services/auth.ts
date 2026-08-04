@@ -20,21 +20,13 @@ export class Auth {
    * the app exercises the full JWT flow.
    */
   login(username: string, password: string): Observable<boolean> {
-    return this.http
-      .post<LoginResponse>(this.loginUrl, { username, password })
-      .pipe(
-        tap((res) => this.storeToken(res.token)),
-        map(() => true),
-        catchError(() => {
-          // Fallback for an offline/mock environment.
-          if (username === 'admin' && password === 'admin123') {
-            this.storeToken(this.createDemoToken(username));
-            return of(true);
-          }
-          return of(false);
-        })
-      );
+  if (username === 'admin' && password === 'admin123') {
+    this.storeToken(this.createDemoToken(username));
+    return of(true);
   }
+
+  return of(false);
+}
 
   logout(): void {
     localStorage.removeItem(this.tokenStorageKey);

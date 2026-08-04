@@ -10,7 +10,7 @@ import { Employee } from '../models/employee';
 })
 // Data service topic: fetch employees from the API and fall back to mock data when needed.
 export class EmployeeService {
-  private readonly apiUrl = '/api/employees';
+  private readonly apiUrl = 'https://hubble-tz6n.onrender.com/employees';
   private readonly fallbackUrl = '/mock-data/employees.json';
 
   constructor(private http: HttpClient) {}
