@@ -7,7 +7,6 @@ import { Dashboard } from './components/dashboard/dashboard';
 import { Hierarchy } from './components/hierarchy/hierarchy';
 import { Leaves } from './components/leaves/leaves';
 import { Mbadges } from './components/mbadges/mbadges';
-import { Payments } from './components/payments/payments';
 import { Payroll } from './components/payroll/payroll';
 import { Timesheets } from './components/timesheets/timesheets';
 import { Login } from './login/login';
@@ -27,7 +26,6 @@ export const routes: Routes = [
       { path: 'login', component: Shell},
       { path: 'dashboard', component: Dashboard },
       { path: 'calendar', component: Calendar },
-      { path: 'payments', component: Payments },
       { path: 'payroll', component: Payroll },
       { path: 'leaves', component: Leaves },
       { path: 'hierarchy', component: Hierarchy },

@@ -22,6 +22,9 @@ export class EmployeeService {
     );
   }
 
+  // The of() operator is an RxJS creation operator. 
+  // It creates an Observable that emits the value(s) you provide and then immediately completes.
+
   private getFallbackEmployees(): Observable<Employee[]> {
     return this.http.get<Employee[]>(this.fallbackUrl).pipe(
       catchError(() => of([]))

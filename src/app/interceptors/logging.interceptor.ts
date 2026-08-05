@@ -12,10 +12,6 @@ import { Observable, tap } from 'rxjs';
 /**
  * Interceptor topic: inspect every HTTP request/response pair in one central place.
  * The interceptor logs request metadata, response timing, and failures for debugging.
- *
- * NOTE: This interceptor is registered globally in {@link appConfig}. It is
- * intended for development / debugging use. Remove or adapt the console calls
- * as appropriate for production builds.
  */
 @Injectable()
 export class LoggingInterceptor implements HttpInterceptor {

@@ -41,7 +41,7 @@ export class Calendar {
       const current = new Date(start);
       current.setDate(start.getDate() + i);
 
-      // Store render-friendly state for each day cell.
+      // Store state for each day cell.
       this.days.push({
         date: current,
         label: current.getDate(),
