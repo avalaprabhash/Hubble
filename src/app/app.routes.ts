@@ -41,5 +41,5 @@ export const routes: Routes = [
     ]
   },
   // Send unknown URLs back to the login entry point.
-  { path: '**', redirectTo: 'login' }
+  { path: '**', redirectTo: 'dashboard' }
 ];

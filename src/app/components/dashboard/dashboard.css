@@ -37,7 +37,23 @@ body{
     margin-bottom:15px;
     font-weight:600;
 }
+.breadcrumb {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    color: #666;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
 
+.breadcrumb .arrow {
+    color: #999;
+}
+
+.breadcrumb .active {
+    color: #222;
+}
 .timezone h3::after,
 .help h3::after,
 .event h3::after,

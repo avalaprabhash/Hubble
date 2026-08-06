@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   selector: 'app-payroll',
   imports: [],
   templateUrl: './payroll.html',
-  styles: ``,
+  styleUrls: ['./payroll.css'],
 })
 // Placeholder component for the payroll view.
 export class Payroll {}

@@ -43,7 +43,23 @@
   font-size: 1.4rem;
   cursor: pointer;
 }
+.breadcrumb {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    color: #666;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
 
+.breadcrumb .arrow {
+    color: #999;
+}
+
+.breadcrumb .active {
+    color: #222;
+}
 .calendar-title {
   margin: 0;
   font-size: 1.4rem;
